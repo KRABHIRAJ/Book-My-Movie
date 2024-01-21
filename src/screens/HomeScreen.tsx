@@ -80,7 +80,7 @@ const HomeScreen = ({navigation}: any ) => {
         style={styles.scrollViewContainer}
         bounces={false}
         contentContainerStyle={styles.scrollViewContentContainer} >
-        <StatusBar hidden />
+        {/* <StatusBar hidden /> */}
         <View style={styles.SearchContainer}>
           <InputHeader searchFunction={searchMoviesFunction} />
         </View>
@@ -95,7 +95,7 @@ const HomeScreen = ({navigation}: any ) => {
     <ScrollView
         style={styles.scrollViewContainer}
         bounces={false}>
-        <StatusBar hidden />
+        {/* <StatusBar hidden /> */}
         <View style={styles.SearchContainer}>
           <InputHeader searchFunction={searchMoviesFunction} />
         </View>
@@ -104,6 +104,7 @@ const HomeScreen = ({navigation}: any ) => {
          horizontal
          data={nowPlayingMovieList}
          bounces={false}
+         showsHorizontalScrollIndicator={false}
          keyExtractor={(item) => item.id}
          snapToInterval={(width * 0.7) + SPACING.space_32}
          snapToAlignment={'center'}
@@ -133,6 +134,7 @@ const HomeScreen = ({navigation}: any ) => {
          />
         <CategoryHeader title={'Popular'} />
         <FlatList
+         showsHorizontalScrollIndicator={false}
          horizontal
          data={popularMovieList}
          bounces={false}
@@ -154,6 +156,7 @@ const HomeScreen = ({navigation}: any ) => {
         <CategoryHeader title={'Upcoming'} />
         <FlatList
          horizontal
+         showsHorizontalScrollIndicator={false}
          data={upcomingMovieList}
          bounces={false}
          keyExtractor={(item) => item.id}
