@@ -110,15 +110,15 @@ const SeatBookingScreen = ({navigation, route} : any) => {
       } catch (err) {
         console.log('Error in buyTickets :',err);
       }
+      navigation.navigate('Ticket',{
+        seatArray: selectedSeatArray,
+        date: dateArray[selectedDateIndex],
+        time: timeArray[selectedTimeIndex],
+        ticketImage: route.params.posterImage,
+      });
     } else {
       ToastAndroid.showWithGravity('Please select seat, date and time of the show!', ToastAndroid.SHORT, ToastAndroid.BOTTOM);
     }
-    navigation.navigate('Ticket',{
-      seatArray: selectedSeatArray,
-      date: dateArray[selectedDateIndex],
-      time: timeArray[selectedTimeIndex],
-      ticketImage: route.params.posterImage,
-    });
   };
 
 
